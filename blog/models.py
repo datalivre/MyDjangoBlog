@@ -7,8 +7,8 @@ from django.utils import timezone
 class Post(models.Model):
     # PROPRIEDADES DO OBJETO
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    # definindo um campo de texto limitado a 200 caracteres 
-    title = models.CharField(max_length = 200)
+    # definindo um campo de texto limitado a 200 caracteres
+    title = models.CharField(max_length=200)
     # definindo um campo de texto ilimitado
     text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
@@ -19,6 +19,6 @@ class Post(models.Model):
         self.publish_date = timezone.now()
         self.save()
     # método str
+
     def __str__(self):
         return self.title
-    
